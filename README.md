@@ -12,33 +12,33 @@
 - belongs_to :user
 
 ## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|name|string|null: false|
 
-|id|name|email|password|Options|
-|--|----|-----|--------|-------|
-|1|tarou|aaa@gmail.com|1234abcd|null: false, foreign_key: true|
-|2|zirou|bbb@gmail.com|4321dcba|null: false, foreign_key: true|
 
 ### Association
 - has_many :messages
 - has_many :groups, through: :groups_users
 
 ## groupsテーブル
-
-|id|name|Options|
-|--|----|-------|
-|1|tarou|null: false, foreign_key: true|
-|2|zirou|null: false, foreign_key: true|
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :messages
 - has_many :users, through: :groups_users
 
 ## messagesテーブル
-
-|id|image|text|user_id|Options|
-|--|-----|----|-------|-------|
-|1|sun|太陽|taiyou|null: false, foreign_key: true|
-|2|moon|月|tuki|null: false, foreign_key: true|
+|Column|Type|Options|
+|------|----|-------|
+|image|text||
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
