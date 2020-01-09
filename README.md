@@ -28,8 +28,7 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
 - has_many :messages
@@ -39,9 +38,11 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|text||
-|text|text|null: false|
+|image|text|
+|text|text|
 |user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
 
 ### Association
 - belongs_to :user
