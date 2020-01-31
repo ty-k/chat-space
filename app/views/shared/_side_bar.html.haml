@@ -11,6 +11,6 @@
   .groups
     - current_user.groups.each do |group|
       .group
-        =link_to "#", class: "group" do
+        = link_to group_messages_path(group) do
           %p.group__group-name a
           %p.group__latest-message     まだメッセージがありません
