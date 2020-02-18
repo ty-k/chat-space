@@ -2,16 +2,16 @@ $(function(){
   var buildHTML = function(message) {
       if (message.content && message.image) {
         var html = `<div class="message" data-message-id=  ${message.id} > 
-          <div class="upper-message"> 
-            <div class="upper-message__user-name"> 
+          <div class="message__upper-info"> 
+            <div class="message__upper-info__talker"> 
               ${message.user_name }
             </div> 
-            <div class="upper-message__date"> 
+            <div class="message__upper-info__date"> 
               ${message.created_at} 
             </div> 
           </div> 
           <div class="lower-message"> 
-            <p class="lower-message__content"> 
+            <p class="message__text"> 
               ${message.content} 
             </p> 
             <img src=" ${message.image}  " class="lower-message__image" > 
@@ -19,27 +19,27 @@ $(function(){
         </div>`
       } else if (message.content) {
         var html = `<div class="message" data-message-id=  ${message.id}  > 
-          <div class="upper-message"> 
-            <div class="upper-message__user-name"> 
+          <div class="message__upper-info"> 
+            <div class="message__upper-info__talker"> 
               ${message.user_name} 
             </div> 
-            <div class="upper-message__date"> 
+            <div class="message__upper-info__date"> 
               ${message.created_at} 
             </div> 
           </div> 
           <div class="lower-message"> 
-            <p class="lower-message__content"> 
+            <p class="message__text"> 
               ${message.content} 
             </p>
           </div>
         </div>`
       } else if (message.image) {
         var html = `<div class="message" data-message-id=  ${message.id}  > 
-          <div class="upper-message"> 
-            <div class="upper-message__user-name"> 
+          <div class="message__upper-info"> 
+            <div class="message__upper-info__talker"> 
               ${message.user_name} 
             </div> 
-            <div class="upper-message__date"> 
+            <div class="message__upper-info__date"> 
               ${message.created_at} 
             </div> 
           </div> 
